@@ -1,0 +1,3 @@
+# Core parsing is stdlib-only; these unlock the better tiers.
+pymupdf>=1.23.0      # paragraph bboxes -> paragraph-level anchors
+pypdf>=4.0.0         # optional second opinion on page count / encryption
