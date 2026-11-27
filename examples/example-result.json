@@ -1,0 +1,590 @@
+{
+  "case_id": "example-bert",
+  "status": "success",
+  "task_kinds": [
+    "notes"
+  ],
+  "language": "en",
+  "paper": {
+    "file": "bert-acl-2col.pdf",
+    "sha256": "5692a5514787a8c6727b4ff3b726a3385798bc68e12138d1d4af83947e2acf6e",
+    "pages": 16,
+    "front_matter": {
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "authors": [
+        "Jacob Devlin",
+        "Ming-Wei Chang",
+        "Kenton Lee",
+        "Kristina Toutanova"
+      ]
+    }
+  },
+  "paper_card": {
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": [
+      "Jacob Devlin",
+      "Ming-Wei Chang",
+      "Kenton Lee",
+      "Kristina Toutanova"
+    ],
+    "year": null,
+    "venue": null,
+    "doi": null,
+    "language": null,
+    "pages": 16,
+    "paper_type": "empirical",
+    "research_question": "能否用统一的双向 Transformer 预训练目标，替代任务特定的架构改造，并在多类 NLP 任务上同时取得最好结果？",
+    "data": [],
+    "methods": [
+      "As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations.",
+      "The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features.",
+      "The two approaches share the same objective function during pre-training, where they use unidirectional language models to learn general language representations."
+    ],
+    "findings": [
+      "As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations.",
+      "It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement)."
+    ],
+    "conclusions": null,
+    "limitations": [
+      "论文自身未设局限章节；从方法条件看，结论依赖大规模无标注语料与充足算力，小数据场景未报告。"
+    ],
+    "limitations_kind": "inferred",
+    "summary": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations.",
+    "references": null,
+    "fields": {},
+    "_anchors": [
+      "A0001",
+      "A0002",
+      "A0003",
+      "A0001",
+      "A0003",
+      "A0076"
+    ],
+    "limitations_note": "paper states no explicit limitation in the sections read"
+  },
+  "sections": [
+    {
+      "id": "S01",
+      "title": "Abstract",
+      "full_heading": "Abstract",
+      "level": 1,
+      "kind": "abstract",
+      "page_start": 1,
+      "page_end": 1,
+      "n_paragraphs": 3,
+      "n_words": 167,
+      "status": "ok",
+      "objective": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.",
+      "key_points": [
+        "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.",
+        "It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).",
+        "Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.",
+        "As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations."
+      ],
+      "methods": [
+        "As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations."
+      ],
+      "results": [
+        "It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).",
+        "Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers."
+      ],
+      "conclusion": "BERT is conceptually simple and empirically powerful.",
+      "limitations": [],
+      "evidence": [
+        "A0001",
+        "A0002",
+        "A0003",
+        "A0004",
+        "A0005"
+      ],
+      "anchors": [
+        "A0001",
+        "A0002",
+        "A0003",
+        "A0004",
+        "A0005"
+      ],
+      "extractive": true,
+      "continuity": {
+        "opens_with": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.",
+        "previous_tail": null,
+        "link": "start"
+      }
+    },
+    {
+      "id": "S02",
+      "title": "Introduction",
+      "full_heading": "1 Introduction",
+      "level": 1,
+      "kind": null,
+      "page_start": 1,
+      "page_end": 2,
+      "n_paragraphs": 18,
+      "n_words": 547,
+      "status": "ok",
+      "objective": "Language model pre-training has been shown to be effective for improving many natural language processing tasks (Dai and Le, 2015; Peters et al., 2018a; Radford et al., 2018; Howard and Ruder, 2018).",
+      "key_points": [
+        "Language model pre-training has been shown to be effective for improving many natural language processing tasks (Dai and Le, 2015; Peters et al., 2018a; Radford et al., 2018; Howard and Ruder, 2018).",
+        "Williams et al., 2018) and paraphrasing (Dolan and Brockett, 2005), which aim to predict the relationships between sentences by analyzing them holistically, as well as token-level tasks such as named entity recognition and question answering, where models are required to produce ﬁne-grained output at the token level (Tjong Kim Sang and De Meulder, 2003; Rajpurkar et al., 2016).",
+        "BERT is the ﬁrst ﬁnetuning based representation model that achieves state-of-the-art performance on a large suite of sentence-level and token-level tasks, outperforming many task-speciﬁc architectures.",
+        "The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features."
+      ],
+      "methods": [
+        "The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features.",
+        "The two approaches share the same objective function during pre-training, where they use unidirectional language models to learn general language representations."
+      ],
+      "results": [
+        "Williams et al., 2018) and paraphrasing (Dolan and Brockett, 2005), which aim to predict the relationships between sentences by analyzing them holistically, as well as token-level tasks such as named entity recognition and question answering, where models are required to produce ﬁne-grained output at the token level (Tjong Kim Sang and De Meulder, 2003; Rajpurkar et al., 2016).",
+        "BERT is the ﬁrst ﬁnetuning based representation model that achieves state-of-the-art performance on a large suite of sentence-level and token-level tasks, outperforming many task-speciﬁc architectures."
+      ],
+      "conclusion": "• BERT advances the state of the art for eleven",
+      "limitations": [],
+      "evidence": [
+        "A0006",
+        "A0007",
+        "A0008",
+        "A0009",
+        "A0010",
+        "A0011"
+      ],
+      "anchors": [
+        "A0006",
+        "A0007",
+        "A0008",
+        "A0009",
+        "A0010",
+        "A0011"
+      ],
+      "extractive": true,
+      "continuity": {
+        "opens_with": "Language model pre-training has been shown to be effective for improving many natural language processing tasks (Dai and Le, 2015; Peters et al., 2018a; Radford et al., 2018; Howard and Ruder, 2018).",
+        "previous_tail": "BERT is conceptually simple and empirically powerful.",
+        "link": "implicit"
+      }
+    },
+    {
+      "id": "S03",
+      "title": "Related Work",
+      "full_heading": "2 Related Work",
+      "level": 1,
+      "kind": null,
+      "page_start": 2,
+      "page_end": 2,
+      "n_paragraphs": 2,
+      "n_words": 23,
+      "status": "thin",
+      "objective": "There is a long history of pre-training general language representations, and we brieﬂy review the most widely-used approaches in this section.",
+      "key_points": [
+        "There is a long history of pre-training general language representations, and we brieﬂy review the most widely-used approaches in this section."
+      ],
+      "methods": [],
+      "results": [],
+      "conclusion": null,
+      "limitations": [],
+      "evidence": [
+        "A0012"
+      ],
+      "anchors": [
+        "A0012"
+      ],
+      "extractive": true,
+      "continuity": {
+        "opens_with": "There is a long history of pre-training general language representations, and we brieﬂy review the most widely-used approaches in this section.",
+        "previous_tail": "• BERT advances the state of the art for eleven",
+        "link": "explicit_reference"
+      }
+    }
+  ],
+  "knowledge_points": [
+    {
+      "id": "K001",
+      "term": "A “sequence”",
+      "canonical": "a “sequence”",
+      "kind": "concept",
+      "statement": "A “sequence” — the input token sequence to BERT, which may be a single sentence or two sentence",
+      "aliases": [],
+      "section": "S07",
+      "page": 4,
+      "confidence": 0.6,
+      "anchor": "A0085"
+    },
+    {
+      "id": "K002",
+      "term": "NSP",
+      "canonical": "nsp",
+      "kind": "abbreviation",
+      "statement": "NSP = Next Sentence Prediction",
+      "aliases": [
+        "Next Sentence Prediction",
+        "C is used for next"
+      ],
+      "section": "S08",
+      "page": 4,
+      "confidence": 0.8,
+      "anchor": "A0086"
+    },
+    {
+      "id": "K003",
+      "term": "QA",
+      "canonical": "qa",
+      "kind": "abbreviation",
+      "statement": "QA = downstream tasks such as Question",
+      "aliases": [
+        "downstream tasks such as Question"
+      ],
+      "section": "S08",
+      "page": 4,
+      "confidence": 0.8,
+      "anchor": "A0087"
+    },
+    {
+      "id": "K004",
+      "term": "NLI",
+      "canonical": "nli",
+      "kind": "abbreviation",
+      "statement": "NLI = Natural Language Inference",
+      "aliases": [
+        "Natural Language Inference"
+      ],
+      "section": "S08",
+      "page": 4,
+      "confidence": 0.8,
+      "anchor": "A0087"
+    },
+    {
+      "id": "K005",
+      "term": "GLUE",
+      "canonical": "glue",
+      "kind": "abbreviation",
+      "statement": "GLUE = General Language Understanding Evaluation",
+      "aliases": [
+        "General Language Understanding Evaluation"
+      ],
+      "section": "S11",
+      "page": 5,
+      "confidence": 0.8,
+      "anchor": "A0044"
+    },
+    {
+      "id": "K006",
+      "term": "SWAG",
+      "canonical": "swag",
+      "kind": "abbreviation",
+      "statement": "SWAG = Situations With Adversarial Generations",
+      "aliases": [
+        "Situations With Adversarial Generations"
+      ],
+      "section": "S14",
+      "page": 7,
+      "confidence": 0.8,
+      "anchor": "A0060"
+    }
+  ],
+  "key_points": [
+    "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.",
+    "It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).",
+    "Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.",
+    "As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations."
+  ],
+  "anchors": [
+    {
+      "id": "A0001",
+      "pid": "p1_9",
+      "page": 1,
+      "section": "S01",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.",
+      "truncated": false,
+      "bbox": [
+        89.0,
+        245.8,
+        273.3,
+        423.2
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0002",
+      "pid": "p1_9",
+      "page": 1,
+      "section": "S01",
+      "sentence": 2,
+      "kind": "text",
+      "quote": "As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without",
+      "truncated": true,
+      "bbox": [
+        89.0,
+        245.8,
+        273.3,
+        423.2
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0003",
+      "pid": "p1_11",
+      "page": 1,
+      "section": "S01",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement),",
+      "truncated": true,
+      "bbox": [
+        89.0,
+        441.2,
+        273.3,
+        546.8
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0004",
+      "pid": "p1_9",
+      "page": 1,
+      "section": "S01",
+      "sentence": 1,
+      "kind": "text",
+      "quote": "Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and",
+      "truncated": true,
+      "bbox": [
+        89.0,
+        245.8,
+        273.3,
+        423.2
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0005",
+      "pid": "p1_10",
+      "page": 1,
+      "section": "S01",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "BERT is conceptually simple and empirically powerful.",
+      "truncated": false,
+      "bbox": [
+        89.0,
+        429.3,
+        273.3,
+        451.2
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0006",
+      "pid": "p1_14",
+      "page": 1,
+      "section": "S02",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "Language model pre-training has been shown to be effective for improving many natural language processing tasks (Dai and Le, 2015; Peters et al., 2018a; Radford et al., 2018; Howard and Ruder, 2018).",
+      "truncated": false,
+      "bbox": [
+        72.0,
+        578.6,
+        290.3,
+        657.2
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0007",
+      "pid": "p1_16",
+      "page": 1,
+      "section": "S02",
+      "sentence": 1,
+      "kind": "text",
+      "quote": "The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features.",
+      "truncated": false,
+      "bbox": [
+        307.3,
+        225.2,
+        525.5,
+        425.8
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0008",
+      "pid": "p1_16",
+      "page": 1,
+      "section": "S02",
+      "sentence": 3,
+      "kind": "text",
+      "quote": "The two approaches share the same objective function during pre-training, where they use unidirectional language models to learn general language representations.",
+      "truncated": false,
+      "bbox": [
+        307.3,
+        225.2,
+        525.5,
+        425.8
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0009",
+      "pid": "p1_15",
+      "page": 1,
+      "section": "S02",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "Williams et al., 2018) and paraphrasing (Dolan and Brockett, 2005), which aim to predict the relationships between sentences by analyzing them holistically, as well as token-level tasks such as named entity recognition",
+      "truncated": true,
+      "bbox": [
+        72.0,
+        659.8,
+        290.3,
+        765.6
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0010",
+      "pid": "p2_5",
+      "page": 2,
+      "section": "S02",
+      "sentence": 1,
+      "kind": "text",
+      "quote": "BERT is the ﬁrst ﬁnetuning based representation model that achieves state-of-the-art performance on a large suite of sentence-level and token-level tasks, outperforming many task-speciﬁc architectures.",
+      "truncated": false,
+      "bbox": [
+        74.1,
+        324.5,
+        290.3,
+        416.7
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0011",
+      "pid": "p2_7",
+      "page": 2,
+      "section": "S02",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "• BERT advances the state of the art for eleven",
+      "truncated": false,
+      "bbox": [
+        74.1,
+        427.5,
+        290.3,
+        438.4
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0012",
+      "pid": "p2_12",
+      "page": 2,
+      "section": "S03",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "There is a long history of pre-training general language representations, and we brieﬂy review the most widely-used approaches in this section.",
+      "truncated": false,
+      "bbox": [
+        72.0,
+        512.0,
+        290.3,
+        550.0
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    },
+    {
+      "id": "A0076",
+      "pid": "p9_4",
+      "page": 9,
+      "section": "S18",
+      "sentence": 0,
+      "kind": "text",
+      "quote": "All of the BERT results presented so far have used the ﬁne-tuning approach, where a simple classiﬁcation layer is added to the pre-trained model, and all parameters are jointly ﬁne-tuned on a downstream task.",
+      "truncated": false,
+      "bbox": [
+        72.0,
+        285.5,
+        290.3,
+        472.6
+      ],
+      "origin": "extractive",
+      "verified": true,
+      "verify_method": "bbox_clip",
+      "char_offset": null
+    }
+  ],
+  "verification": {
+    "anchors_total": 13,
+    "anchors_verified": 13,
+    "anchors_failed": 0,
+    "coverage": 1.0,
+    "method": "bbox_clip+page_text+native_search",
+    "failures": []
+  },
+  "uncertainty": [
+    {
+      "kind": "example",
+      "detail": "示例仅保留前 3 节，用于展示结构，不是完整结果"
+    }
+  ],
+  "provenance": {
+    "extractor": "pymupdf",
+    "body_size": 10.91,
+    "warnings": [],
+    "generated_at": "2026-11-27T21:58:11+0800",
+    "script": "pdfx.py + compose.py",
+    "tier_note": "block/line/char geometry available; paragraph bboxes anchor every quote",
+    "skill_version": "1.0.0",
+    "elapsed_s": 0.76,
+    "contract_source": "case.json:output_contract"
+  },
+  "output_contract": {
+    "source": "inferred",
+    "declared": [],
+    "satisfied": [],
+    "missing": []
+  },
+  "change_log": [
+    {
+      "when": "2026-11-27T21:58:11+0800",
+      "what": "extractive baseline built from the PDF",
+      "why": "guarantees an honest, anchored deliverable before any refinement"
+    }
+  ],
+  "notes_markdown": "# BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding\n\n**Authors:** Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova  \n**Pages:** 16  \n**Type:** empirical  \n**Case:** example-bert\n\n## 一页摘要\n\nWe introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations. [p.1, p.1, p.1, p.1, p.1, p.9]\n\n## 论文卡片\n\n| 字段 | 内容 |\n| --- | --- |\n| 研究问题 | 能否用统一的双向 Transformer 预训练目标，替代任务特定的架构改造，并在多类 NLP 任务上同时取得最好结果？ |\n| 方法 | As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations.; The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features.; The two approaches share the same objective function during pre-training, where they use unidirectional language models to learn general language representations. |\n| 主要发现 | As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations.; It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement). |\n| 局限 | 论文自身未设局限章节；从方法条件看，结论依赖大规模无标注语料与充足算力，小数据场景未报告。 |\n\n## 章节地图\n\n| 节 | 标题 | 层级 | 页码 | 段数 | 状态 |\n| --- | --- | --- | --- | --- | --- |\n| S01 | Abstract | L1 | p.1–1 | 3 | ok |\n| S02 | Introduction | L1 | p.1–2 | 18 | ok |\n| S03 | Related Work | L1 | p.2–2 | 2 | thin |\n\n## 章节笔记\n\n### S01 · Abstract\n*p.1–1 · 3 段 · 状态 ok*\n\n- **本节目的:** We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. [p.1]\n- **方法:** As a result, the pre-trained BERT model can be ﬁnetuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial taskspeciﬁc architecture modiﬁcations.\n- **结果:** It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement). Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.\n- **结论:** BERT is conceptually simple and empirically powerful.\n- **要点:** Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.\n\n### S02 · Introduction\n*p.1–2 · 18 段 · 状态 ok*\n\n- **本节目的:** Language model pre-training has been shown to be effective for improving many natural language processing tasks (Dai and Le, 2015; Peters et al., 2018a; Radford et al., 2018; Howard and Ruder, 2018). [p.1]\n- **方法:** The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features. The two approaches share the same objective function during pre-training, where they use unidirectional language models to learn general language representations.\n- **结果:** Williams et al., 2018) and paraphrasing (Dolan and Brockett, 2005), which aim to predict the relationships between sentences by analyzing them holistically, as well as token-level tasks such as named entity recognition and question answering, where models are required to produce ﬁne-grained output at the token level (Tjong Kim Sang and De Meulder, 2003; Rajpurkar et al., 2016). BERT is the ﬁrst ﬁnetuning based representation model that achieves state-of-the-art performance on a large suite of sentence-level and token-level tasks, outperforming many task-speciﬁc architectures.\n- **结论:** • BERT advances the state of the art for eleven\n- **承接:** 上一节以「BERT is conceptually simple and empirically powerful.」收束，本节以「Language model pre-training has been shown to be effective …」展开。\n- **要点:** BERT is the ﬁrst ﬁnetuning based representation model that achieves state-of-the-art performance on a large suite of sentence-level and token-level tasks, outperforming many task-speciﬁc architectures.\n- **要点:** The feature-based approach, such as ELMo (Peters et al., 2018a), uses task-speciﬁc architectures that include the pre-trained representations as additional features.\n\n### S03 · Related Work\n*p.2–2 · 2 段 · 状态 thin*\n\n- **本节目的:** There is a long history of pre-training general language representations, and we brieﬂy review the most widely-used approaches in this section. [p.2]\n- **承接:** 上一节以「• BERT advances the state of the art for eleven」收束，本节以「There is a long history of pre-training general language re…」展开。\n\n## 知识点\n\n| 编号 | 术语 | 类型 | 说明 | 页码 |\n| --- | --- | --- | --- | --- |\n| K001 | A “sequence” | concept | A “sequence” — the input token sequence to BERT, which may be a single sentence or two sentence | p.4 |\n| K002 | NSP | abbreviation | NSP = Next Sentence Prediction | p.4 |\n| K003 | QA | abbreviation | QA = downstream tasks such as Question | p.4 |\n| K004 | NLI | abbreviation | NLI = Natural Language Inference | p.4 |\n| K005 | GLUE | abbreviation | GLUE = General Language Understanding Evaluation | p.5 |\n| K006 | SWAG | abbreviation | SWAG = Situations With Adversarial Generations | p.7 |\n\n## 不确定与未报告\n\n- **example**: 示例仅保留前 3 节，用于展示结构，不是完整结果\n\n## 锚点索引（可回链）\n\n| 锚点 | 页 | 节 | 引文（逐字） |\n| --- | --- | --- | --- |\n| A0001 | p.1 | S01 | We introduce a new language representation model called BERT, which s… |\n| A0002 | p.1 | S01 | As a result, the pre-trained BERT model can be ﬁnetuned with just one… |\n| A0003 | p.1 | S01 | It obtains new state-of-the-art results on eleven natural language pr… |\n| A0004 | p.1 | S01 | Unlike recent language representation models (Peters et al., 2018a; R… |\n| A0005 | p.1 | S01 | BERT is conceptually simple and empirically powerful. |\n| A0006 | p.1 | S02 | Language model pre-training has been shown to be effective for improv… |\n| A0007 | p.1 | S02 | The feature-based approach, such as ELMo (Peters et al., 2018a), uses… |\n| A0008 | p.1 | S02 | The two approaches share the same objective function during pre-train… |\n| A0009 | p.1 | S02 | Williams et al., 2018) and paraphrasing (Dolan and Brockett, 2005), w… |\n| A0010 | p.2 | S02 | BERT is the ﬁrst ﬁnetuning based representation model that achieves s… |\n| A0011 | p.2 | S02 | • BERT advances the state of the art for eleven |\n| A0012 | p.2 | S03 | There is a long history of pre-training general language representati… |\n| A0076 | p.9 | S18 | All of the BERT results presented so far have used the ﬁne-tuning app… |\n\n## 核验\n\n- 锚点总数 13，通过 13，失败 0，覆盖率 1.0\n- 核验方式: bbox_clip+page_text+native_search\n"
+}
