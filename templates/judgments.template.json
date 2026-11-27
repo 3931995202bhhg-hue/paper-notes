@@ -1,0 +1,22 @@
+{
+  "_comment": "复制为 judgments.json 后按需保留字段；每条精修都带 evidence（段落 id，来自 extract.json）。无 evidence 的内容会被标记 unanchored。",
+  "paper_card": {
+    "research_question": {"text": "", "evidence": ["p1_1"]},
+    "data": {"text": "", "evidence": ["p3_2"]},
+    "limitations": {"text": "", "evidence": ["p9_4"], "kind": "inferred"}
+  },
+  "sections": {
+    "S01": {
+      "objective": {"text": "", "evidence": ["p1_2"]},
+      "key_points": [
+        {"text": "", "evidence": ["p1_2"]}
+      ]
+    }
+  },
+  "knowledge_points": [
+    {"term": "", "statement": "", "evidence": ["p2_1"], "kind": "concept", "aliases": []}
+  ],
+  "uncertainty": [
+    ""
+  ]
+}
