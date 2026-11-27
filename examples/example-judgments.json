@@ -1,0 +1,30 @@
+{
+  "paper_card": {
+    "research_question": {
+      "text": "能否用统一的双向 Transformer 预训练目标，替代任务特定的架构改造，并在多类 NLP 任务上同时取得最好结果？",
+      "evidence": ["p1_9", "p1_11"]
+    },
+    "limitations": {
+      "text": "论文自身未设局限章节；从方法条件看，结论依赖大规模无标注语料与充足算力，小数据场景未报告。",
+      "evidence": ["p9_4"],
+      "kind": "inferred"
+    }
+  },
+  "sections": {
+    "S07": {
+      "objective": {
+        "text": "提出 BERT：以双向 Transformer 编码器与掩码语言模型实现深度双向预训练。",
+        "evidence": ["p3_11"]
+      }
+    }
+  },
+  "knowledge_points": [
+    {
+      "term": "MLM",
+      "statement": "掩码语言模型：随机遮蔽输入 token 并预测被遮蔽项，使表示同时利用左右上下文。",
+      "evidence": ["p4_6"],
+      "kind": "method"
+    }
+  ],
+  "uncertainty": ["论文未报告预训练总能耗的具体测量方式"]
+}
