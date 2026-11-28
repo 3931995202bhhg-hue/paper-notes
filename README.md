@@ -60,7 +60,7 @@ scripts/              抽取、组装、锚点核验、契约解析、自检
 references/           输出契约、字段字典、锚点规范、精修契约、失败手册、评审清单
 templates/            笔记模板、卡片模板、judgments 模板
 examples/             最小示例（示意输出）
-Dockerfile            可选：带 poppler + tesseract 的运行环境
+references/environment.md  依赖矩阵、容器配方与运行入口
 ```
 
 ## 诚实边界
